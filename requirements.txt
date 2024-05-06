@@ -47,8 +47,6 @@ jupyterlab==4.1.8
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.1
 jupyterlab_widgets==3.0.10
-# Editable install with no version control (Maps==0.0.1)
--e /Users/benjaminmajstorovic/Documents/log/2024/05_04_maps/venv/lib/python3.9/site-packages
 MarkupSafe==2.1.5
 matplotlib-inline==0.1.7
 mistune==3.0.2
