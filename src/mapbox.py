@@ -29,7 +29,9 @@ def get_mapbox_isochrone_polygon(
 
     link = mapbox_link.format(profile, lon, lat, contours_minutes, token)
     link_content = requests.get(link)
-    polygon = link_content.json()['features'][0]['geometry']['coordinates']
+    link_content_json = link_content.json()
+    assert 'features' in link_content_json
+    polygon = link_content_json['features'][0]['geometry']['coordinates']
 
     return polygon
 
