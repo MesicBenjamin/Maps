@@ -1,0 +1,15 @@
+{
+    "osijek" : {
+        "nature" : {
+            "subcategory":{
+                "park" : {
+                    "Perivoj Kralja Tomislava" : {
+                        "profile": "cycling",
+                        "contours_minutes": 20
+                    }
+                }
+            },
+            "color": "green"
+        }
+    }
+}
