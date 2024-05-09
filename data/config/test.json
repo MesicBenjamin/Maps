@@ -10,6 +10,17 @@
                 }
             },
             "color": "green"
+        },
+        "kindergarten" : {
+            "subcategory":{
+                "kindergarten" : {
+                    "Vrtic #1" : {
+                        "profile": "walking",
+                        "contours_minutes": 20
+                    }
+                }
+            },
+            "color": "orange"
         }
     }
 }
