@@ -1,26 +1,21 @@
 {
-    "osijek" : {
-        "nature" : {
-            "subcategory":{
-                "park" : {
-                    "Perivoj Kralja Tomislava" : {
-                        "profile": "cycling",
-                        "contours_minutes": 20
-                    }
-                }
-            },
+    "locations": [
+        {
+            "name": "Perivoj Kralja Tomislava",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "cycling",
+            "contours_minutes": 20,
             "color": "green"
         },
-        "kindergarten" : {
-            "subcategory":{
-                "kindergarten" : {
-                    "Vrtic #1" : {
-                        "profile": "walking",
-                        "contours_minutes": 20
-                    }
-                }
-            },
-            "color": "orange"
+        {
+            "name": "Vrtic #1",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
         }
-    }
+    ],
+    "logic" : "park AND kindergarten"
 }
