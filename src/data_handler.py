@@ -18,6 +18,29 @@ def load_json(path: str) -> dict:
 
     return config
 
+def check_polygons(polygon) -> list:
+
+    """
+    path: Shapely Polygon or MultiPolygon objects
+
+    returns list of Polygon objects
+    """
+    
+    if polygon.geom_type == 'Polygon':
+        return [polygon]
+    elif polygon.geom_type == 'MultiPolygon':
+        return list(polygon.geoms)
+
+def convert_shapely_polygon(polygon) -> dict:
+
+    polygon_exterior = polygon.exterior.xy
+
+    return {
+        'lon' : [l for l in polygon_exterior[0]],        
+        'lat' : [l for l in polygon_exterior[1]]
+    }
+
+
 class Location():
     
     def __init__(self, config):
@@ -40,7 +63,8 @@ class Location():
                 path_c = pathlib.Path(path_c)
 
                 polygon = Polygon(c)
-                polygon.get_isochrone(path_c, self.config['profile'], c['lat'], c['lon'], self.config['contours_minutes'], mapbox_token)
+                polygon.get_mapbox_isochrone(path_c, self.config['profile'], c['lat'], c['lon'], self.config['contours_minutes'], mapbox_token)
+                polygon.get_shapely_polygons()
 
                 self.polygons.append(polygon)
 
@@ -53,17 +77,18 @@ class Polygon():
     def __init__(self, center):
 
         self.center = center
-        self.coords = None
+        self.mapbox_coords = []
+        self.shapely_polygons = []
 
-    def get_isochrone(self, path_c, profile, lat, lon, contours_minutes, mapbox_token):
+    def get_mapbox_isochrone(self, path_c, profile, lat, lon, contours_minutes, mapbox_token):
 
         if path_c.exists():
 
             with open(path_c, 'rb') as file:
-                self.coords = pickle.load(file)
+                self.mapbox_coords = pickle.load(file)
 
         else:
-            self.coords = mapbox.get_mapbox_isochrone_polygon(
+            self.mapbox_coords = mapbox.get_mapbox_isochrone_polygon(
                 profile = profile,
                 lat = lat,
                 lon = lon,
@@ -72,7 +97,12 @@ class Polygon():
             )
 
             with open(path_c, 'wb') as file:
-                pickle.dump(self.coords, file)        
+                pickle.dump(self.mapbox_coords, file)        
+
+    def get_shapely_polygons(self):
+
+        for c in self.mapbox_coords:
+            self.shapely_polygons += check_polygons(shapely.geometry.Polygon(c))
 
 def prepare_locations(
         path_config: str,
@@ -97,8 +127,10 @@ def prepare_locations(
 
         location = Location(c)
         location.get_polygons(path_cache, mapbox_token)
-  
-        locations[c['name']] = location
+
+        name = ' | '.join([c['name'], c['profile'], str(c['contours_minutes'])])
+
+        locations[name] = location
     
     return locations
 
@@ -118,30 +150,30 @@ def stack_locations(
         category = location.config['category']
 
         if not category in locations_stacked:
-            locations_stacked[category] = {'polygons':[]}
+            locations_stacked[category] = {'shapely_polygons':[]}
 
-        locations_stacked[category]['polygons'] += [shapely.geometry.Polygon(pp)
-                                                    for p in location.polygons for pp in p.coords]
+        locations_stacked[category]['shapely_polygons'] += [pp for p in location.polygons for pp in p.shapely_polygons]
 
     # Stack per category
     for category in locations_stacked.keys():
-        locations_stacked[category]['final'] = unary_union(locations_stacked[category]['polygons']).exterior.coords.xy
-        locations_stacked[category]['final'] = shapely.geometry.Polygon([[locations_stacked[category]['final'][0][n], locations_stacked[category]['final'][1][n]] 
-                                                for n in range(len(locations_stacked[category]['final'][0]))])
+        locations_stacked[category]['final_shapely_polygon'] = check_polygons(unary_union(locations_stacked[category]['shapely_polygons']))
+        # locations_stacked[category]['final'] = shapely.geometry.Polygon([[locations_stacked[category]['final'][0][n], locations_stacked[category]['final'][1][n]] 
+        #                                         for n in range(len(locations_stacked[category]['final'][0]))])
 
     # Combine all 
-    list_final = [p['final'] for p in locations_stacked.values()]
-    number_of_stacked = len(list_final)
-    if number_of_stacked > 0:
-        polygon_intersection = list_final[0]
-        if number_of_stacked > 1:
-            for p in list_final[1:]:
-                polygon_intersection = polygon_intersection.intersection(p)
-    else:
-        polygon_intersection = Polygon([])
+    polygon_intersection = None
+    for p in locations_stacked.values():
+        for pp in p['final_shapely_polygon']:
 
-    locations_stacked['final'] = polygon_intersection.exterior.coords.xy
-    locations_stacked['final'] = shapely.geometry.Polygon([[locations_stacked['final'][0][n], locations_stacked['final'][1][n]] 
-                                            for n in range(len(locations_stacked['final'][0]))])
+            if polygon_intersection is None:
+                polygon_intersection = pp
+            else:
+                polygon_intersection = polygon_intersection.intersection(pp)
+
+
+    locations_stacked['final_shapely_polygon'] = check_polygons(polygon_intersection)
+    
+    # locations_stacked['final'] = shapely.geometry.Polygon([[locations_stacked['final'][0][n], locations_stacked['final'][1][n]] 
+    #                                         for n in range(len(locations_stacked['final'][0]))])
 
     return locations_stacked

@@ -1,0 +1,29 @@
+{
+    "locations": [
+        {
+            "name": "Gradski bazeni",
+            "category": "sport",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 30,
+            "color": "orange"
+        },
+        {
+            "name": "Gradski bazeni",
+            "category": "sport",
+            "type" : "isochrone",
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "blue"
+        },
+        {
+            "name": "Gradski bazeni",
+            "category": "sport",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 10,
+            "color": "green"
+        }       
+    ],
+    "logic" : "park AND kindergarten"
+}
