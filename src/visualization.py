@@ -37,10 +37,10 @@ def visualize(
                 lat = [l['lat'] for l in location.config['coordinates']],
                 lon = [l['lon'] for l in location.config['coordinates']],
                 mode='markers',
-                marker = {'size': 10, 'color': [location.config['color']]},
+                marker = {'size': 10, 'color': [location.config['color'] for l in location.config['coordinates']]},
                 hoverinfo=['name'],
-                name=location_name
-            )
+                name=location_name,
+            ),
         )
 
         # Plot each category on final figure
@@ -49,7 +49,7 @@ def visualize(
                 lat = [l['lat'] for l in location.config['coordinates']],
                 lon = [l['lon'] for l in location.config['coordinates']],
                 mode='markers',
-                marker = {'size': 10, 'color': [location.config['color']]},
+                marker = {'size': 10, 'color': [location.config['color'] for l in location.config['coordinates']]},
                 hoverinfo=['name'],
                 name=location_name
             )
@@ -66,8 +66,8 @@ def visualize(
                         lon = temp['lon'],
                         hoverinfo=['name'],
                         line = {'color': location.config['color']},
-                        name=location_name
-                    )
+                        name=location_name,                     
+                    ),
                 )
 
     # Plot final polygons

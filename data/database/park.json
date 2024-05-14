@@ -14,5 +14,37 @@
                 "lon": 18.688290825248853
             }
         ]
+    },
+    "Park kralja Drzislava" : {
+        "coordinates" : [
+            {
+                "lat": 45.558508897043,
+                "lon": 18.69272183844209
+            }
+        ]
+    },
+    "Sakuntala" : {
+        "coordinates" : [
+            {
+                "lat": 45.56130294712346,
+                "lon": 18.68181704319649
+            }
+        ]
+    },
+    "Park Oskara Nemona" : {
+        "coordinates" : [
+            {
+                "lat": 45.5577288521256,
+                "lon": 18.683167025153917
+            }
+        ]
+    },
+    "Park Zrinjevac" : {
+        "coordinates" : [
+            {
+                "lat": 45.55540948336719,
+                "lon": 18.679422107304514
+            }
+        ]
     }
 }
