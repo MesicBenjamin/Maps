@@ -16,8 +16,46 @@
             "contours_minutes": 10,
             "color": "green"
         },
-
-               
+        {
+            "name": "Park kralja Drzislava",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },
+        {
+            "name": "Sakuntala",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },
+        {
+            "name": "Park kralja Petra Kresimira",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },
+        {
+            "name": "Park Oskara Nemona",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },
+        {
+            "name": "Park Zrinjevac",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },          
         {
             "name": "Vrtic #1",
             "category": "kindergarten",
@@ -28,12 +66,33 @@
         },
         {
             "name": "Gradski bazeni",
-            "category": "sport",
+            "category": "swimming",
             "type" : "isochrone",            
             "profile": "cycling",
             "contours_minutes": 20,
             "color": "blue"
-        }        
+        },
+
+        {
+            "name": "Drava",
+            "category": "river",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 30,
+            "color": "cadetblue"
+        },
+
+        {
+            "name": "Fakultet primijenjene matematike i informatike",
+            "category": "university",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "orange"
+        }
+
+
+
     ],
     "logic" : "park AND kindergarten"
 }
