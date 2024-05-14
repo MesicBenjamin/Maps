@@ -1,21 +1,39 @@
 {
     "locations": [
         {
-            "name": "Perivoj Kralja Tomislava",
+            "name": "Perivoj kralja Tomislava",
             "category": "park",
             "type" : "isochrone",
-            "profile": "cycling",
-            "contours_minutes": 20,
+            "profile": "walking",
+            "contours_minutes": 10,
             "color": "green"
         },
+        {
+            "name": "Park kralja Petra Kresimira",
+            "category": "park",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "green"
+        },
+
+               
         {
             "name": "Vrtic #1",
             "category": "kindergarten",
             "type" : "isochrone",            
-            "profile": "walking",
+            "profile": "cycling",
             "contours_minutes": 20,
             "color": "purple"
-        }
+        },
+        {
+            "name": "Gradski bazeni",
+            "category": "sport",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "blue"
+        }        
     ],
     "logic" : "park AND kindergarten"
 }

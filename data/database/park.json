@@ -1,9 +1,17 @@
 {
-    "Perivoj Kralja Tomislava" : {
+    "Perivoj kralja Tomislava" : {
         "coordinates" : [
             {
                 "lat": 45.56096871749088,
                 "lon": 18.690122856208774
+            }
+        ]
+    },
+    "Park kralja Petra Kresimira" : {
+        "coordinates" : [
+            {
+                "lat": 45.559290168719144,
+                "lon": 18.688290825248853
             }
         ]
     }
