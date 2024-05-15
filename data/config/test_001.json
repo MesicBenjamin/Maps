@@ -1,0 +1,41 @@
+{
+    "locations": [         
+        {
+            "name": "Vrtic #1",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Gradski bazeni",
+            "category": "swimming",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "blue"
+        },
+
+        {
+            "name": "Fakultet primijenjene matematike i informatike",
+            "category": "university",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "orange"
+        },
+
+        {
+            "name": "Drava",
+            "category": "river",
+            "type" : "line",
+            "buffer_distance": 0.005,
+            "color": "cadetblue"
+        }
+
+
+
+    ],
+    "logic" : "park AND kindergarten"
+}
