@@ -3,88 +3,84 @@ import pathlib
 import kaleido
 import plotly
 import plotly.graph_objects as go
+import shapely
 
 from src import mapbox
 from src import data_handler
 
-def visualize(
-        locations, locations_stacked,
+def draw_initial_coordinates(
+        fig: go.Figure,
+        coordinates: dict,
+        color: str,
+        name: str
+    ) -> None:
+    """
+    ToDo
+    """
+
+    # Plot each category on individual figure
+    fig.add_trace(
+        go.Scattermapbox(
+            lat = [c['lat'] for c in coordinates],
+            lon = [c['lon'] for c in coordinates],
+            mode='markers',
+            marker = {
+                'size': 10,
+                'color': [color for c in coordinates]
+            },
+            hoverinfo=['name'],
+            name=name,
+        ),
+    )
+
+def draw_shapely_polygon(fig, shapely_polygon: shapely.Polygon, color: str, name: str) -> None:
+    """
+    ToDo
+    """
+
+    coord = data_handler.convert_shapely_polygon_to_coords(shapely_polygon)
+
+    fig.add_trace(
+        go.Scattermapbox(
+            mode = 'lines', fill = 'toself',
+            lat = coord['lat'],
+            lon = coord['lon'],
+            line = {'color': color},
+            hoverinfo=['name'],
+            name=name
+        )
+    )
+
+def draw_map(
+        map: data_handler.Map,
         path_token: str = 'data/tokens/mapbox.txt',
         path_results: str = 'results'          
     ):
-    """    
+    """
+    ToDo
     """
 
     mapbox_token = mapbox.get_token(path_token)
+    figs = { 'final' : go.Figure()}
 
-    # Prepare all figs
-    figs = {
-        'final' : go.Figure(),
-    }
-    for location_name, location in locations.items():
-        
+    for location_name, location in map.locations.items():
+
         category = location.config['category']
         figs[category] = go.Figure()
 
-    # Plot points
-    for location_name, location in locations.items():
-
-        category = location.config['category']
-
         # Plot each category on individual figure
-        figs[category].add_trace(
-            go.Scattermapbox(
-                lat = [l['lat'] for l in location.config['coordinates']],
-                lon = [l['lon'] for l in location.config['coordinates']],
-                mode='markers',
-                marker = {'size': 10, 'color': [location.config['color'] for l in location.config['coordinates']]},
-                hoverinfo=['name'],
-                name=location_name,
-            ),
-        )
+        draw_initial_coordinates(figs[category], location.config['coordinates'], location.config['color'], location_name)
+
+        for polygon in location.polygons:
+            for shapely_polygon in polygon.shapely_polygons:
+                draw_shapely_polygon(figs[category], shapely_polygon, location.config['color'], category)
 
         # Plot each category on final figure
-        figs['final'].add_trace(
-            go.Scattermapbox(
-                lat = [l['lat'] for l in location.config['coordinates']],
-                lon = [l['lon'] for l in location.config['coordinates']],
-                mode='markers',
-                marker = {'size': 10, 'color': [location.config['color'] for l in location.config['coordinates']]},
-                hoverinfo=['name'],
-                name=location_name
-            )
-        )
-
-        for p in location.polygons:
-            for pp in p.shapely_polygons:
-
-                temp = data_handler.convert_shapely_polygon(pp)
-                figs[category].add_trace(
-                    go.Scattermapbox(
-                        mode = 'lines', fill = 'toself',                        
-                        lat = temp['lat'],
-                        lon = temp['lon'],
-                        hoverinfo=['name'],
-                        line = {'color': location.config['color']},
-                        name=location_name,                     
-                    ),
-                )
+        draw_initial_coordinates(figs['final'], location.config['coordinates'], location.config['color'], location_name)
 
     # Plot final polygons
-    for p in locations_stacked['final_shapely_polygon']:
-
-        temp = data_handler.convert_shapely_polygon(p)
-
-        figs['final'].add_trace(
-            go.Scattermapbox(
-                mode = 'lines', fill = 'toself',
-                lat = temp['lat'],
-                lon = temp['lon'],
-                line = {'color': 'gray'},
-                hoverinfo=['name'],
-                name='Final'
-            ),
-        )
+    for shapely_polygon in map.locations_stacked['final_shapely_polygon']:
+        draw_shapely_polygon(figs['final'], shapely_polygon, 'gray', name='Final')
 
     # Save output
     for fig_name, fig in figs.items():
