@@ -33,9 +33,28 @@ def draw_initial_coordinates(
         ),
     )
 
-def draw_shapely_polygon(fig, shapely_polygon: shapely.Polygon, color: str, name: str) -> None:
+def draw_shapely_polygons(fig, shapely_polygons: list, color: str, name: str) -> None:
     """
     ToDo
+    """
+
+    fig.update_layout(
+        mapbox = {
+            'layers': [
+                {
+                    'source': shapely_polygon.__geo_interface__,
+                    'type': 'fill',
+                    'color': color,
+                    'opacity': 0.5
+                } 
+                for shapely_polygon in shapely_polygons
+            ],
+        },       
+    )
+
+def draw_shapely_polygon(fig, shapely_polygon: shapely.Polygon, color: str, name: str) -> None:
+    """
+    Not used
     """
 
     coord = data_handler.convert_shapely_polygon_to_coords(shapely_polygon)
@@ -63,6 +82,10 @@ def draw_map(
     mapbox_token = mapbox.get_token(path_token)
     figs = { 'final' : go.Figure()}
 
+    # Plot final polygons
+    draw_shapely_polygons(figs['final'], map.locations_stacked['final_shapely_polygon'], 'gray', name='Final')
+
+    # Plot location polygons and coordinates
     for location_name, location in map.locations.items():
 
         category = location.config['category']
@@ -72,15 +95,13 @@ def draw_map(
         draw_initial_coordinates(figs[category], location.config['coordinates'], location.config['color'], location_name)
 
         for polygon in location.polygons:
-            for shapely_polygon in polygon.shapely_polygons:
-                draw_shapely_polygon(figs[category], shapely_polygon, location.config['color'], category)
+            draw_shapely_polygons(figs[category], polygon.shapely_polygons, location.config['color'], category)
 
-        # Plot each category on final figure
+        # Plot each category on final figure but skip line coordinates
+        if location.config['type'] == 'line':
+            continue
+
         draw_initial_coordinates(figs['final'], location.config['coordinates'], location.config['color'], location_name)
-
-    # Plot final polygons
-    for shapely_polygon in map.locations_stacked['final_shapely_polygon']:
-        draw_shapely_polygon(figs['final'], shapely_polygon, 'gray', name='Final')
 
     # Save output
     for fig_name, fig in figs.items():

@@ -1,68 +1,17 @@
 {
-    "locations": [
+    "locations": [         
         {
-            "name": "Perivoj kralja Tomislava",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
+            "name": "Vukovarska cesta",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
         },
         {
-            "name": "Park kralja Petra Kresimira",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },
-        {
-            "name": "Park kralja Drzislava",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },
-        {
-            "name": "Sakuntala",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },
-        {
-            "name": "Park kralja Petra Kresimira",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },
-        {
-            "name": "Park Oskara Nemona",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },
-        {
-            "name": "Park Zrinjevac",
-            "category": "park",
-            "type" : "isochrone",
-            "profile": "walking",
-            "contours_minutes": 10,
-            "color": "green"
-        },          
-        {
-            "name": "Vrtic #1",
-            "category": "kindergarten",
-            "type" : "isochrone",            
-            "profile": "cycling",
-            "contours_minutes": 20,
-            "color": "purple"
+            "name": "Test #001",
+            "category": "custom",
+            "type" : "standard",
+            "color": "yellow"
         },
         {
             "name": "Gradski bazeni",
@@ -72,15 +21,6 @@
             "contours_minutes": 20,
             "color": "blue"
         },
-
-        {
-            "name": "Drava",
-            "category": "river",
-            "type" : "line",
-            "buffer_distance": 0.005,
-            "color": "cadetblue"
-        },
-
         {
             "name": "Fakultet primijenjene matematike i informatike",
             "category": "university",
@@ -89,9 +29,10 @@
             "contours_minutes": 20,
             "color": "orange"
         }
-
-
-
     ],
-    "logic" : "park AND kindergarten"
+    "logic" : {
+        "intersection" : ["swimming", "university"],
+        "union" : ["custom"],
+        "difference" : ["traffic"]
+    }
 }

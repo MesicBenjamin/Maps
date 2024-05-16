@@ -18,18 +18,22 @@ def load_json(path: str) -> dict:
 
     return config
 
-def check_polygons(polygon) -> list:
+def check_polygons(shapely_polygon) -> list:
 
     """
-    path: Shapely Polygon or MultiPolygon objects
+    shapely_polygon: Shapely Polygon or MultiPolygon objects
 
     returns list of Polygon objects
     """
     
-    if polygon.geom_type == 'Polygon':
-        return [polygon]
-    elif polygon.geom_type == 'MultiPolygon':
-        return list(polygon.geoms)
+    if shapely_polygon is None:
+        return []
+
+    if shapely_polygon.geom_type == 'Polygon':
+        return [shapely_polygon]
+    
+    elif shapely_polygon.geom_type == 'MultiPolygon':
+        return list(shapely_polygon.geoms)
 
 def convert_shapely_polygon_to_coords(shapely_polygon: shapely.Polygon) -> dict:
     """
@@ -211,20 +215,21 @@ class Polygon():
 
 class Map():
 
-    def __init__(self, config):
+    def __init__(self, path_config):
         """
         ToDo
         """
 
+        self.configuration = load_json(path_config)
+
         self.locations = {}
-        self.prepare_locations(config)
+        self.prepare_locations()
 
         self.locations_stacked = {}
         self.stack_locations()
 
     def prepare_locations(
             self,
-            path_config: str,
             path_database: str = 'data/database',   
         ) -> None:
 
@@ -232,9 +237,7 @@ class Map():
         ToDo
         """
         
-        configuration = load_json(path_config)
-
-        for config in configuration['locations']:        
+        for config in self.configuration['locations']:        
 
             self.update_config_with_database_coordinates(config, path_database)
 
@@ -280,17 +283,29 @@ class Map():
             self.locations_stacked[category]['final_shapely_polygon'] = check_polygons(stacked_polygons)
 
         # Combine all 
-        polygon_intersection = None
-        for category, category_shapely_polygons in self.locations_stacked.items():
+        final_shapely_polygon = None
+        for logic, logic_categories in self.configuration['logic'].items():
+            for category, category_shapely_polygons in self.locations_stacked.items():
 
-            if category_shapely_polygons['final_shapely_polygon'] is None:
-                continue
+                if not category in logic_categories:
+                    continue
 
-            for shapely_polygon in category_shapely_polygons['final_shapely_polygon']:
+                if category_shapely_polygons['final_shapely_polygon'] is None:
+                    continue
 
-                if polygon_intersection is None:
-                    polygon_intersection = shapely_polygon
-                else:
-                    polygon_intersection = polygon_intersection.intersection(shapely_polygon)
+                for shapely_polygon in category_shapely_polygons['final_shapely_polygon']:
+                    
+                    if final_shapely_polygon is None:
+                        final_shapely_polygon = shapely_polygon
+                        continue
 
-        self.locations_stacked['final_shapely_polygon'] = check_polygons(polygon_intersection)
+                    if logic == 'union':
+                        final_shapely_polygon = unary_union([final_shapely_polygon, shapely_polygon])
+                    elif logic == 'intersection':
+                        final_shapely_polygon = final_shapely_polygon.intersection(shapely_polygon)
+                    elif logic == 'difference':
+                        final_shapely_polygon = final_shapely_polygon.difference(shapely_polygon)
+                    else:
+                        pass
+                
+        self.locations_stacked['final_shapely_polygon'] = check_polygons(final_shapely_polygon)
