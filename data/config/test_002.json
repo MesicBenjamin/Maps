@@ -1,0 +1,18 @@
+{
+    "locations": [         
+        {
+            "name": "Vukovarska cesta",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
+        },
+        {
+            "name": "Test #001",
+            "category": "custom",
+            "type" : "standard",
+            "color": "yellow"
+        }        
+    ],
+    "logic" : "park AND kindergarten"
+}

@@ -43,23 +43,23 @@ def convert_shapely_polygon_to_coords(shapely_polygon: shapely.Polygon) -> dict:
         'lat' : [l for l in shapely_polygon_exterior[1]]
     }
 
-def convert_coords_to_shapely_polygon(polygon: dict) -> list:
+def convert_coords_to_shapely_polygon(coords: dict) -> list:
     """
     ToDo
     """
 
-    coords = [[lon, lat] for lon, lat in zip(polygon['lon'], polygon['lat'])]
-    shapely_polygon = shapely.Polygon(coords)
+    coords_temp = [[lon, lat] for lon, lat in zip(coords['lon'], coords['lat'])]
+    shapely_polygon = shapely.Polygon(coords_temp)
 
     return shapely_polygon
 
-def convert_coords_to_shapely_line(polygon: dict, buffer_distance: float) -> list:
+def convert_coords_to_shapely_line(coords: dict, buffer_distance: float) -> list:
     """
     ToDo
     """
 
-    coords = [[lon, lat] for lon, lat in zip(polygon['lon'], polygon['lat'])]
-    shapely_line = shapely.LineString(coords)
+    coords_temp = [[lon, lat] for lon, lat in zip(coords['lon'], coords['lat'])]
+    shapely_line = shapely.LineString(coords_temp)
     shapely_line = shapely_line.buffer(buffer_distance)
 
     return shapely_line
@@ -100,6 +100,8 @@ class Location():
         ToDo
         """        
 
+        pathlib.Path(path_cache).mkdir(parents=True, exist_ok=True)
+
         if self.config['type'] == 'isochrone':
             
             for coord in self.config['coordinates']:
@@ -115,20 +117,19 @@ class Location():
                     coord['lat'], coord['lon'],
                     self.config['contours_minutes'],
                 )
-                polygon.get_shapely_polygons()
+                polygon.get_shapely_polygons_from_mapbox_coords()
 
                 self.polygons.append(polygon)
 
         elif self.config['type'] == 'line':
-
             polygon = Polygon(self.config['coordinates'])
             polygon.get_polygons_from_line(self.config['buffer_distance'])
             self.polygons.append(polygon)
 
-
         else:
-            pass
-            # Add simple polygon
+            polygon = Polygon(self.config['coordinates'])
+            polygon.get_shapely_polygons_standard()
+            self.polygons.append(polygon)            
 
 class Polygon():
 
@@ -174,6 +175,9 @@ class Polygon():
                 pickle.dump(self.mapbox_coords, file)        
 
     def get_polygons_from_line(self, buffer_distance):
+        """
+        ToDo
+        """  
 
         coords = {
             'lat' : [coord['lat'] for coord in self.center],
@@ -182,7 +186,20 @@ class Polygon():
 
         self.shapely_polygons = [convert_coords_to_shapely_line(coords, buffer_distance)] 
 
-    def get_shapely_polygons(self):
+    def get_shapely_polygons_standard(self):
+        """
+        ToDo
+        """  
+
+        coords = {
+            'lat' : [coord['lat'] for coord in self.center],
+            'lon' : [coord['lon'] for coord in self.center],
+        }
+
+        shapely_polygon = convert_coords_to_shapely_polygon(coords)
+        self.shapely_polygons = [shapely_polygon]
+
+    def get_shapely_polygons_from_mapbox_coords(self):
         """
         ToDo
         """        

@@ -76,9 +76,8 @@
         {
             "name": "Drava",
             "category": "river",
-            "type" : "isochrone",            
-            "profile": "cycling",
-            "contours_minutes": 30,
+            "type" : "line",
+            "buffer_distance": 0.005,
             "color": "cadetblue"
         },
 

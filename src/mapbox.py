@@ -27,6 +27,7 @@ def get_mapbox_isochrone_coordinates(
     assert isinstance(lon, float)
     assert isinstance(lat, float)
     assert isinstance(mapbox_token, str)
+    assert not mapbox_token == '<Here comes Mapbox API token>'
 
     link = mapbox_link.format(profile, lon, lat, contours_minutes, mapbox_token)
     link_content = requests.get(link)

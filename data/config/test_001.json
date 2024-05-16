@@ -27,8 +27,8 @@
         },
 
         {
-            "name": "Drava",
-            "category": "river",
+            "name": "Vukovarska cesta",
+            "category": "road",
             "type" : "line",
             "buffer_distance": 0.005,
             "color": "cadetblue"
