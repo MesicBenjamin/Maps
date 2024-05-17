@@ -18,35 +18,6 @@ def load_json(path: str) -> dict:
 
     return config
 
-def check_polygons(shapely_polygon) -> list:
-
-    """
-    shapely_polygon: Shapely Polygon or MultiPolygon objects
-
-    returns list of Polygon objects
-    """
-    
-    if shapely_polygon is None:
-        return []
-
-    if shapely_polygon.geom_type == 'Polygon':
-        return [shapely_polygon]
-    
-    elif shapely_polygon.geom_type == 'MultiPolygon':
-        return list(shapely_polygon.geoms)
-
-def convert_shapely_polygon_to_coords(shapely_polygon: shapely.Polygon) -> dict:
-    """
-    ToDo
-    """
-
-    shapely_polygon_exterior = shapely_polygon.exterior.xy
-
-    return {
-        'lon' : [l for l in shapely_polygon_exterior[0]],
-        'lat' : [l for l in shapely_polygon_exterior[1]]
-    }
-
 def convert_coords_to_shapely_polygon(coords: dict) -> list:
     """
     ToDo
@@ -211,7 +182,7 @@ class Polygon():
 
         for coord in self.mapbox_coords:
             shapely_polygon = convert_coords_to_shapely_polygon(coord)
-            self.shapely_polygons += check_polygons(shapely_polygon)
+            self.shapely_polygons.append(shapely_polygon)
 
 class Map():
 
@@ -280,7 +251,7 @@ class Map():
         # Stack per category
         for category in self.locations_stacked.keys():
             stacked_polygons = unary_union(self.locations_stacked[category]['shapely_polygons'])
-            self.locations_stacked[category]['final_shapely_polygon'] = check_polygons(stacked_polygons)
+            self.locations_stacked[category]['final_shapely_polygon'] = stacked_polygons
 
         # Combine all 
         final_shapely_polygon = None
@@ -293,19 +264,19 @@ class Map():
                 if category_shapely_polygons['final_shapely_polygon'] is None:
                     continue
 
-                for shapely_polygon in category_shapely_polygons['final_shapely_polygon']:
+                shapely_polygon = category_shapely_polygons['final_shapely_polygon']
                     
-                    if final_shapely_polygon is None:
-                        final_shapely_polygon = shapely_polygon
-                        continue
+                if final_shapely_polygon is None:
+                    final_shapely_polygon = shapely_polygon
+                    continue
 
-                    if logic == 'union':
-                        final_shapely_polygon = unary_union([final_shapely_polygon, shapely_polygon])
-                    elif logic == 'intersection':
-                        final_shapely_polygon = final_shapely_polygon.intersection(shapely_polygon)
-                    elif logic == 'difference':
-                        final_shapely_polygon = final_shapely_polygon.difference(shapely_polygon)
-                    else:
-                        pass
+                if logic == 'union':
+                    final_shapely_polygon = unary_union([final_shapely_polygon, shapely_polygon])
+                elif logic == 'intersection':
+                    final_shapely_polygon = final_shapely_polygon.intersection(shapely_polygon)
+                elif logic == 'difference':
+                    final_shapely_polygon = final_shapely_polygon.difference(shapely_polygon)
+                else:
+                    pass
                 
-        self.locations_stacked['final_shapely_polygon'] = check_polygons(final_shapely_polygon)
+        self.locations_stacked['final_shapely_polygon'] = final_shapely_polygon

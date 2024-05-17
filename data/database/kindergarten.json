@@ -1,9 +1,249 @@
 {
-    "Vrtic #1" : {
+    "Djecji vrtic Visnjevac" : {
         "coordinates" : [
             {
-                "lat": 45.55736880441413,
-                "lon": 18.69991741658569
+                "lat": 45.56451055317391,
+                "lon": 18.612095951840978
+            }
+        ]
+    },
+    "Djecji vrtic Josipovac" : {
+        "coordinates" : [
+            {
+                "lat": 45.572139755029454,
+                "lon": 18.60089407365537
+            }
+        ]
+    },
+    "Djecji vrtic Suncica" : {
+        "coordinates" : [
+            {
+                "lat": 45.563061312996865,
+                "lon": 18.648340755625007
+            }
+        ]
+    },
+    "Djecji vrtic Jelenko" : {
+        "coordinates" : [
+            {
+                "lat": 45.56654018260058,
+                "lon": 18.645960125139453
+            }
+        ]
+    },
+    "Djecji vrtic Cvrcak" : {
+        "coordinates" : [
+            {
+                "lat": 45.56352251396461,
+                "lon": 18.65846122244881
+            }
+        ]
+    },
+    "Djecji vrtic Pcelica" : {
+        "coordinates" : [
+            {
+                "lat": 45.54530922942358,
+                "lon": 18.679180490698247
+            }
+        ]
+    },
+    "Djecji vrtic Tratincica" : {
+        "coordinates" : [
+            {
+                "lat": 45.545392212060754,
+                "lon": 18.679904262444772
+            }
+        ]
+    },
+    "Djecji vrtic Potocnica" : {
+        "coordinates" : [
+            {
+                "lat": 45.55653352850119,
+                "lon": 18.666018955226313
+            }
+        ]
+    },
+    "Djecji vrtic Vedri dani" : {
+        "coordinates" : [
+            {
+                "lat": 45.55926244598175,
+                "lon": 18.680498625038428 
+            }
+        ]
+    },
+    "Djecji vrtic Latica" : {
+        "coordinates" : [
+            {
+                "lat": 45.5628593765151,
+                "lon": 18.66599144436665
+            }
+        ]
+    },
+    "Djecji vrtic Bubamara" : {
+        "coordinates" : [
+            {
+                "lat": 45.561656600246614,
+                "lon": 18.672021102935098
+            }
+        ]
+    },
+    "Djecji vrtic Radost" : {
+        "coordinates" : [
+            {
+                "lat": 45.55696569235974,
+                "lon": 18.6888354120746
+            }
+        ]
+    },
+    "Djecji vrtic Vrapcic" : {
+        "coordinates" : [
+            {
+                "lat": 45.501318643645405,
+                "lon": 18.746427875691957
+            }
+        ]
+    },
+    "Djecji vrtic Maslacak" : {
+        "coordinates" : [
+            {
+                "lat": 45.54396046126857,
+                "lon": 18.712611691390272
+            }
+        ]
+    },
+    "Djecji vrtic Nevicica" : {
+        "coordinates" : [
+            {
+                "lat": 45.54434241906588,
+                "lon": 18.721224704562648
+            }
+        ]
+    },
+    "Djecji vrtic Krijesnica" : {
+        "coordinates" : [
+            {
+                "lat": 45.54776551606488,
+                "lon": 18.712096996128576
+            }
+        ]
+    },
+    "Djecji vrtic Kosjenka" : {
+        "coordinates" : [
+            {
+                "lat": 45.547101212695935,
+                "lon": 18.70664125722545
+            }
+        ]
+    },
+    "Djecji vrtic Jabuka" : {
+        "coordinates" : [
+            {
+                "lat": 45.55313518900148,
+                "lon": 18.707892035759176
+            }
+        ]
+    },
+    "Djecji vrtic Mak" : {
+        "coordinates" : [
+            {
+                "lat": 45.5553447309436,
+                "lon": 18.71663225942634
+            }
+        ]
+    },
+    "Djecji vrtic Vladislavci" : {
+        "coordinates" : [
+            {
+                "lat": 45.45665213270752,
+                "lon": 18.57543678345206
+            }
+        ]
+    },
+    "Djecji vrtic Sjencica" : {
+        "coordinates" : [
+            {
+                "lat": 45.552355899286276,
+                "lon": 18.69996672570259 
+            }
+        ]
+    },
+    "Djecji vrtic Stribor" : {
+        "coordinates" : [
+            {
+                "lat": 45.55764815248771,
+                "lon": 18.700280620982035
+            }
+        ]
+    },
+    "Djecji vrtic Bambi" : {
+        "coordinates" : [
+            {
+                "lat": 45.56367506281198,
+                "lon": 18.709357031192766
+            }
+        ]
+    },
+    "Djecji vrtic Ribica" : {
+        "coordinates" : [
+            {
+                "lat": 45.524161929559476,
+                "lon": 18.842560695452182
+            }
+        ]
+    },
+    "Djecji vrtic Ivancica" : {
+        "coordinates" : [
+            {
+                "lat": 45.556007656703,
+                "lon": 18.720821426971156
+            }
+        ]
+    },
+    "Djecji vrtic Jaglenac" : {
+        "coordinates" : [
+            {
+                "lat": 45.55721832630263,
+                "lon": 18.730214578492454
+            }
+        ]
+    },
+    "Djecji vrtic Mali princ (Dunavska)" : {
+        "coordinates" : [
+            {
+                "lat": 45.551189511061054,
+                "lon": 18.68583048537
+            }
+        ]
+    },
+    "Djecji vrtic Mali princ (Paradzika)" : {
+        "coordinates" : [
+            {
+                "lat": 45.563467092904624,
+                "lon": 18.663932116481593
+            }
+        ]
+    },    
+    "Djecji vrtic Mali princ (Antunovac)" : {
+        "coordinates" : [
+            {
+                "lat": 45.48838610138395,
+                "lon": 18.669618548850426
+            }
+        ]
+    },
+    "Djecji vrtic Lastavica" : {
+        "coordinates" : [
+            {
+                "lat": 45.558553513972825,
+                "lon": 18.66703371269032
+            }
+        ]
+    },
+    "Djecji vrtic Snjeguljica" : {
+        "coordinates" : [
+            {
+                "lat": 45.563052071986455,
+                "lon": 18.672556140836427
             }
         ]
     }
