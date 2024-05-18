@@ -3,6 +3,7 @@ import pathlib
 import pickle
 import shapely
 from shapely.ops import unary_union
+from matplotlib.patches import Ellipse
 
 from src import mapbox
 
@@ -38,6 +39,25 @@ def convert_coords_to_shapely_line(coords: dict, buffer_distance: float) -> list
     shapely_line = shapely_line.buffer(buffer_distance)
 
     return shapely_line
+
+def convert_coords_to_shapely_circle(coords: dict, radius_distance: float) -> list:
+    """
+    ToDo
+    """
+
+    center_lon = coords['lon'][0]
+    center_lat = coords['lat'][0]
+    width = radius_distance
+    height = radius_distance*0.75
+
+    # first draw the ellipse using matplotlib
+    matplotlib_ellipse = Ellipse((center_lon, center_lat), width, height, angle=0) 
+    shapely_ellipse = shapely.Polygon(matplotlib_ellipse.get_verts())
+
+    # shapely_circle = shapely.geometry.point.Point(coords['lon'], coords['lat'])
+    # shapely_circle = shapely_circle.buffer(radius_distance)
+
+    return shapely_ellipse
 
 def convert_shapely_line_to_shapely_polygon(shapely_line: shapely.LineString) -> shapely.Polygon:
 
@@ -98,7 +118,12 @@ class Location():
 
         elif self.config['type'] == 'line':
             polygon = Polygon(self.config['coordinates'])
-            polygon.get_polygons_from_line(self.config['buffer_distance'])
+            polygon.get_shapely_polygons_from_line(self.config['buffer_distance'])
+            self.polygons.append(polygon)
+
+        elif self.config['type'] == 'circle':
+            polygon = Polygon(self.config['coordinates'])
+            polygon.get_shapely_polygons_from_circle(self.config['radius'])
             self.polygons.append(polygon)
 
         else:
@@ -149,7 +174,7 @@ class Polygon():
             with open(path_c, 'wb') as file:
                 pickle.dump(self.mapbox_coords, file)        
 
-    def get_polygons_from_line(self, buffer_distance):
+    def get_shapely_polygons_from_line(self, buffer_distance):
         """
         ToDo
         """  
@@ -160,6 +185,18 @@ class Polygon():
         }
 
         self.shapely_polygons = [convert_coords_to_shapely_line(coords, buffer_distance)] 
+
+    def get_shapely_polygons_from_circle(self, buffer_radius):
+        """
+        ToDo
+        """  
+
+        coords = {
+            'lat' : [coord['lat'] for coord in self.center],
+            'lon' : [coord['lon'] for coord in self.center],
+        }
+
+        self.shapely_polygons = [convert_coords_to_shapely_circle(coords, buffer_radius)] 
 
     def get_shapely_polygons_standard(self):
         """
