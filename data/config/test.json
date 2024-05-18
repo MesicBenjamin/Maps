@@ -21,7 +21,43 @@
             "buffer_distance": 0.00025,
             "color": "black"
         },
+        {
+            "name": "Biljska cesta",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
+        },
+        {
+            "name": "Ulica Martina Divalta",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
+        },        
         
+
+
+
+        {
+            "name": "HEP termoelektrana (Ul. Matina Divalta)" ,
+            "category": "powerhouse",
+            "type" : "circle",            
+            "radius": 0.015,
+            "color": "black"
+        },
+        {
+            "name": "HEP termoelektrana (Ul. Cara Hadrijana)" ,
+            "category": "powerhouse",
+            "type" : "circle",            
+            "radius": 0.015,
+            "color": "black"
+        },
+
+
+
+
+
         {
             "name": "Test #001",
             "category": "custom",
@@ -303,6 +339,6 @@
     "logic" : {
         "intersection" : ["swimming", "university", "kindergarten"],
         "union" : ["custom"],
-        "difference" : ["traffic"]
+        "difference" : ["traffic", "powerhouse"]
     }
 }

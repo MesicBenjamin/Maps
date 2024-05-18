@@ -1,0 +1,18 @@
+{
+    "HEP termoelektrana (Ul. Matina Divalta)" : {
+        "coordinates" : [
+            {
+                "lat": 45.54221299193733,
+                "lon": 18.74559407809055
+            }
+        ]
+    },
+    "HEP termoelektrana (Ul. Cara Hadrijana)" : {
+        "coordinates" : [
+            {
+                "lat": 45.56068417072393,
+                "lon": 18.70122681607802
+            }
+        ]
+    }      
+}
