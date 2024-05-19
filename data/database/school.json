@@ -1,0 +1,123 @@
+{
+    "Osnovna skola Retfala" : {
+        "coordinates" : [
+            {
+                "lat": 45.56253140106657,
+                "lon": 18.641644051313992
+            }
+        ]
+    },
+    "Osnovna skola Ivana Filipovica" : {
+        "coordinates" : [
+            {
+                "lat": 45.55883780397738,
+                "lon": 18.66066415540564
+            }
+        ]
+    },
+    "Osnovna skola Vladimira Becica" : {
+        "coordinates" : [
+            {
+                "lat": 45.562692575650395,
+                "lon": 18.667413703893214
+            }
+        ]
+    },
+    "Osnovna skola Svete Ane" : {
+        "coordinates" : [
+            {
+                "lat": 45.560279031460794,
+                "lon": 18.674826869067623
+            }
+        ]
+    },
+    "Osnovna skola Dobrisa Cesaric" : {
+        "coordinates" : [
+            {
+                "lat": 45.54739516188458,
+                "lon": 18.680725291889555
+            }
+        ]
+    },
+    "Osnovna skola August Senoa" : {
+        "coordinates" : [
+            {
+                "lat": 45.54863569738579,
+                "lon": 18.685788203614422
+            }
+        ]
+    },
+    "Osnovna skola Antuna Mihanovica" : {
+        "coordinates" : [
+            {
+                "lat": 45.5556481944207,
+                "lon": 18.683830956017893
+            }
+        ]
+    },
+    "Osnovna skola Franje Krezme" : {
+        "coordinates" : [
+            {
+                "lat": 45.55912826680778,
+                "lon": 18.681682141433317
+            }
+        ]
+    },
+    "Osnovna skola Vijenac" : {
+        "coordinates" : [
+            {
+                "lat": 45.55683782961105,
+                "lon": 18.700624845965937
+            }
+        ]
+    },
+    "Osnovna skola Mladost" : {
+        "coordinates" : [
+            {
+                "lat": 45.55162447508141,
+                "lon": 18.700471432861935
+            }
+        ]
+    },
+    "Osnovna skola Grigor Vitez" : {
+        "coordinates" : [
+            {
+                "lat": 45.5476930543707,
+                "lon": 18.71306253853636
+            }
+        ]
+    },
+    
+    "Osnovna skola Frana Krste Frankopana" : {
+        "coordinates" : [
+            {
+                "lat": 45.55077734268971,
+                "lon": 18.702051521296436
+            }
+        ]
+    },
+    "Osnovna skola Jagode Truhelke" : {
+        "coordinates" : [
+            {
+                "lat": 45.55934840748443,
+                "lon": 18.719429647435188
+            }
+        ]
+    },
+    "Osnovna skola Ljudevita Gaja" : {
+        "coordinates" : [
+            {
+                "lat": 45.55758449840821,
+                "lon": 18.729904742361157
+            }
+        ]
+    },
+    "Osnovna skola Tin Ujevic" : {
+        "coordinates" : [
+            {
+                "lat": 45.54472086781214,
+                "lon": 18.723311127709998
+            }
+        ]
+    }
+}

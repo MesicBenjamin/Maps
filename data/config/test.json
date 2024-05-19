@@ -34,8 +34,75 @@
             "type" : "line",
             "buffer_distance": 0.00025,
             "color": "black"
-        },        
-        
+        },
+        {
+            "name": "Osijek obilaznica",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0004,
+            "color": "black"
+        },          
+        {
+            "name": "Ulica kralja Petra Svacica",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
+        },
+        {
+            "name": "Ulica Josipa Reihl - Kira",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.00025,
+            "color": "black"
+        },
+
+
+
+        {
+            "name": "Pruga (Zeljeznicki kolodvor)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0007,
+            "color": "black"
+        },     
+        {
+            "name": "Pruga (Retfala)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0005,
+            "color": "black"
+        }, 
+        {
+            "name": "Pruga (Cepin)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0005,
+            "color": "black"
+        }, 
+        {
+            "name": "Pruga (Brijest)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0005,
+            "color": "black"
+        }, 
+        {
+            "name": "Pruga (Podravlje)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0005,
+            "color": "black"
+        }, 
+        {
+            "name": "Pruga (Nemetin)",
+            "category": "traffic",
+            "type" : "line",
+            "buffer_distance": 0.0005,
+            "color": "black"
+        },
+
+
 
 
 
@@ -81,6 +148,122 @@
             "profile": "cycling",
             "contours_minutes": 20,
             "color": "orange"
+        },
+
+
+
+
+        {
+            "name": "Osnovna skola Retfala",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Ivana Filipovica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Vladimira Becica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Svete Ane",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Dobrisa Cesaric",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },  
+        {
+            "name": "Osnovna skola August Senoa",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        }, 
+        {
+            "name": "Osnovna skola Antuna Mihanovica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        }, 
+        {
+            "name": "Osnovna skola Vijenac",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },      
+        {
+            "name": "Osnovna skola Mladost",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },  
+        {
+            "name": "Osnovna skola Grigor Vitez",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },      
+        {
+            "name": "Osnovna skola Frana Krste Frankopana",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Jagode Truhelke",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Ljudevita Gaja",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Tin Ujevic",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
         },
 
 
@@ -337,7 +520,7 @@
         }
     ],
     "logic" : {
-        "intersection" : ["swimming", "university", "kindergarten"],
+        "intersection" : ["swimming", "university", "kindergarten", "school"],
         "union" : ["custom"],
         "difference" : ["traffic", "powerhouse"]
     }
