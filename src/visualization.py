@@ -67,7 +67,7 @@ def draw_map(
 
     # Plot final polygons
     final_shapely_polygon = map.locations_stacked['final_shapely_polygon']
-    draw_shapely_polygons(figs['final'], final_shapely_polygon, 'gray', name='Final')
+    draw_shapely_polygons(figs['final'], final_shapely_polygon, 'green', name='Final')
 
     # Plot individual category
     for location_name, location in map.locations.items():
@@ -104,6 +104,6 @@ def draw_map(
 
         path_fig = pathlib.PurePath(path_results, fig_name + '.png')
         path_fig = pathlib.Path(path_fig)
-        fig.write_image(path_fig, engine='kaleido') 
+        fig.write_image(path_fig, engine='kaleido', scale=2) 
     
     return figs['final']
