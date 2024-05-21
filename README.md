@@ -64,10 +64,11 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here comes project motivation
+Moving to new location can be a big stress. Finding ideal spot varies from one individual to another and can be conditioned by many factors (proximity of schools, kindergartens, public transportation, parks, ...). I have been moving in my life quite a lot and during this process, had developed my own "search engine" how to find good place for living.
+Ideas that are behind this simple repository helped me already few times. Hope they will help someone else too. :-)
+Data shared is based around city of Osijek but can be easily extend to any other location.
 
-in the city of Osijek
-DISCLAIMER: Personal use, Use with caution
+DISCLAIMER: Lcations were gathered from personal experience. It is possible that some locations are just missed, e.g., private kindergartens that are not well known.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -132,7 +133,7 @@ Intersection of all maps is highlighted green. Resulting region satisifes all co
 ![image description](results/final.png)
 
 Interactive mode
-If one wants to study resulting map into greater detail, it is recommended to open ![interactive.ipynb](interactive.ipynb) with jupyter notebook
+If one wants to study resulting map into greater detail, it is recommended to open [interactive.ipynb](interactive.ipynb) with jupyter notebook
    ```sh
     jupyter-notebook
    ```
@@ -141,7 +142,7 @@ If one wants to study resulting map into greater detail, it is recommended to op
 
 ## Adding custom constraints
 
-Add new data should be done in multiple steps
+Add new data should be done in two steps
 
 1. In [data/database](data/database) add new location (with GPS coordinates) to existing categories or add new category following the formatting below
    ```json
