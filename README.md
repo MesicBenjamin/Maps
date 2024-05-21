@@ -248,7 +248,7 @@ Project Link: [https://github.com/MesicBenjamin/Maps](https://github.com/MesicBe
 
 
 * Readme template: [https://github.com/othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-* Map functionalties: [Mapbox](https://www.mapbox.com)
+* Map functionalities: [Mapbox](https://www.mapbox.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
