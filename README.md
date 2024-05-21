@@ -88,7 +88,7 @@ Maps tool relies on standard python packages (plotly + Mapbox API, shapely, ...)
    ```sh
    python -m venv venv
    source venv/bin/activate
-   pip install -r requirements.txt
+   pip install -r Maps/requirements.txt
    pip install Maps/.      
    ```
 
