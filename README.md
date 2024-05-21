@@ -106,7 +106,7 @@ Maps tool relies on standard python packages (plotly + Mapbox API, shapely, ...)
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Command below will generate several different categories of layers (kindergarten, schools, ...) that are defined in config all.json. 
+Command below will generate several different categories of layers (kindergarten, schools, ...) that are defined in [data/config/all.json](data/config/all.json). 
 
    ```sh
     python main.py -p data/config/all.json  
