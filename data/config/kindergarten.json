@@ -1,0 +1,257 @@
+{
+    "locations": [         
+        {
+            "name": "Djecji vrtic Visnjevac",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Josipovac",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Suncica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Jelenko",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Cvrcak",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Pcelica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Tratincica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Potocnica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Vedri dani",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Latica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Bubamara",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Radost",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Vrapcic",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Maslacak",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Nevicica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Krijesnica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Kosjenka",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Jabuka",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Mak",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Vladislavci",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Sjencica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Stribor",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Bambi",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Ribica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Ivancica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Jaglenac",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Mali princ (Dunavska)",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Mali princ (Paradzika)",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Mali princ (Antunovac)",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Lastavica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
+            "name": "Djecji vrtic Snjeguljica",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        }
+    ],
+    "logic" : {
+        "intersection" : ["kindergarten"],
+        "union" : [],
+        "difference" : []
+    }
+}
