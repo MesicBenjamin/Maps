@@ -89,7 +89,8 @@ Maps tool relies on standard python packages (plotly + Mapbox API, shapely, ...)
    python -m venv venv
    source venv/bin/activate
    pip install -r Maps/requirements.txt
-   pip install Maps/.      
+   pip install Maps/.
+   cd Maps
    ```
 
 3. In [data/tokens/mapbox.txt](data/tokens/mapbox.txt) replace 
