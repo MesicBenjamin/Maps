@@ -1,0 +1,17 @@
+{
+    "locations": [
+        {
+            "name": "Gradski bazeni",
+            "category": "swimming",
+            "type" : "isochrone",            
+            "profile": "cycling",
+            "contours_minutes": 20,
+            "color": "blue"
+        }       
+    ],
+    "logic" : {
+        "intersection" : ["swimming"],
+        "union" : [],
+        "difference" : []
+    }
+}

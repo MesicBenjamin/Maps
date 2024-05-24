@@ -194,7 +194,6 @@
 
 
 
-
         {
             "name": "HEP termoelektrana (Ul. Matina Divalta)" ,
             "category": "powerhouse",
@@ -202,16 +201,6 @@
             "radius": 0.015,
             "color": "black"
         },
-        {
-            "name": "HEP termoelektrana (Ul. Cara Hadrijana)" ,
-            "category": "powerhouse",
-            "type" : "circle",            
-            "radius": 0.015,
-            "color": "black"
-        },
-
-
-
 
 
         {
@@ -359,6 +348,14 @@
 
 
 
+        {
+            "name": "Djecji vrtic Lane",
+            "category": "kindergarten",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },        
         {
             "name": "Djecji vrtic Visnjevac",
             "category": "kindergarten",

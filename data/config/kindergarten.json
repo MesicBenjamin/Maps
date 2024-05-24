@@ -1,6 +1,14 @@
 {
     "locations": [         
         {
+            "name": "Djecji vrtic Lane",
+            "category": "kindergarten",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 20,
+            "color": "purple"
+        },
+        {
             "name": "Djecji vrtic Visnjevac",
             "category": "kindergarten",
             "type" : "isochrone",            

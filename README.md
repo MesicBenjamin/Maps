@@ -68,7 +68,7 @@ Moving to new location can be a big stress. Finding ideal spot varies from one i
 Ideas that are behind this simple repository helped me already few times. Hope they will help someone else too. :-)
 Data shared is based around city of Osijek but can be easily extend to any other location.
 
-DISCLAIMER: Lcations were gathered from personal experience. It is possible that some locations are just missed, e.g., private kindergartens that are not well known.
+DISCLAIMER: Locations were gathered from personal experience. It is possible that some locations are just missed, e.g., private kindergartens that are not well known.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -133,7 +133,7 @@ Location of power plants are shown as gray points on the map. Region around them
 Intersection of all maps is highlighted green. Resulting region satisifes all constraints.
 ![image description](results/final.png)
 
-Interactive mode
+Interactive mode  
 If one wants to study resulting map into greater detail, it is recommended to open [interactive.ipynb](interactive.ipynb) with jupyter notebook
    ```sh
     jupyter-notebook
@@ -193,7 +193,7 @@ Add new data should be done in two steps
         }
     }
    ```
-For the sake of simplicity, very few locations from the total list of possible locations is shown. Each location must be added by the name and category that was defined in [data/database](data/database). There are multiple types of location currently supported: line (set of coordinates with distance from it), isochrone suppored by Mapbox (single coordinate with profile type: walking, cycling, driving and minutes range: 10, 20, 30, ...), circle (single coordinate with radius), and standard (set of coordinates that defines region within).
+For the sake of simplicity, very few locations from the total list of possible locations are shown. Each location must be added by the name and category that was defined in [data/database](data/database). There are multiple types of location currently supported: line (set of coordinates with distance from it), isochrone suppored by Mapbox (single coordinate with profile type: walking, cycling, driving and minutes range: 10, 20, 30, ...), circle (single coordinate with radius), and standard (set of coordinates that defines region within).
 
 
 <!-- ROADMAP -->
