@@ -198,7 +198,7 @@
             "type" : "isochrone",            
             "profile": "walking",
             "contours_minutes": 5,
-            "color": "blue"
+            "color": "coral"
         },
 
 
