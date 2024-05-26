@@ -621,5 +621,9 @@
         "intersection" : ["swimming", "university", "kindergarten", "school", "transportation"],
         "union" : ["custom"],
         "difference" : ["traffic", "powerhouse"]
-    }
+    },
+    "center" : {
+        "lat" : 45.55854878748722,
+        "lon" : 18.684848674241845
+    }   
 }

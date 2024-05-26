@@ -261,5 +261,9 @@
         "intersection" : ["kindergarten"],
         "union" : [],
         "difference" : []
-    }
+    },
+    "center" : {
+        "lat" : 45.55854878748722,
+        "lon" : 18.684848674241845
+    }   
 }

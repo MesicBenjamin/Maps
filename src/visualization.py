@@ -94,7 +94,7 @@ def draw_map(
                     'accesstoken': mapbox_token,
                     'style': 'open-street-map',
                     'zoom': 12,
-                    'center': {'lat' : 45.55854878748722, 'lon' : 18.684848674241845},
+                    'center': {'lat' : map.configuration['center']['lat'], 'lon': map.configuration['center']['lon']}            
                 },
                 margin={'r':0,'t':0,'l':0,'b':0},
                 showlegend = False,
