@@ -66,7 +66,7 @@
 
 Moving to new location can be a big stress. Finding ideal spot varies from one individual to another and can be conditioned by many factors (proximity of schools, kindergartens, public transportation, parks, ...). I have been moving in my life quite a lot and during this process, had developed my own "search engine" how to find good place for living.
 Ideas that are behind this simple repository helped me already few times. Hope they will help someone else too. :-)
-Data shared is based around city of Osijek but can be easily extend to any other location.
+Data shared is based around city of Osijek but can be easily extended to any other location.
 
 DISCLAIMER: Locations were gathered from personal experience. It is possible that some locations are just missed, e.g., private kindergartens that are not well known.
 
