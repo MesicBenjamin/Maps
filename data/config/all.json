@@ -192,6 +192,18 @@
         },
 
 
+        {
+            "name": "Zeleno polje - Visnjevac (Tramvaj 1)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "blue"
+        },
+
+
+
+
 
 
         {
@@ -606,7 +618,7 @@
         }
     ],
     "logic" : {
-        "intersection" : ["swimming", "university", "kindergarten", "school"],
+        "intersection" : ["swimming", "university", "kindergarten", "school", "transportation"],
         "union" : ["custom"],
         "difference" : ["traffic", "powerhouse"]
     }
