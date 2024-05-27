@@ -124,7 +124,7 @@ Swimming pool is shown as blue point on the map. Highlighted region indicates te
 School of applied mathematics (University of Osijek) is shown as blue point on the map. Highlighted region indicates teritory that is within 20 minutes cycling distance from the location.
 ![image description](results/university.png)
 
-Public transport stops (tramway and bus) are shown as orange/coral points on the map. Highlighted region indicates teritory that is within 5 minutes walking distance from the nearest station.
+(IN PROGRESS) Public transport stops (tramway and bus) are shown as orange/coral points on the map. Highlighted region indicates teritory that is within 5 minutes walking distance from the nearest station.
 ![image description](results/transportation.png)
 
 Roads with dense traffic and railways are shown as gray regions. 

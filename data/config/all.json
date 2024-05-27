@@ -200,9 +200,14 @@
             "contours_minutes": 5,
             "color": "coral"
         },
-
-
-
+        {
+            "name": "Bikara - Trg Ljudevita Gaja - Ulica Hrvatske Republike (Tramvaj 2)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
 
 
 
