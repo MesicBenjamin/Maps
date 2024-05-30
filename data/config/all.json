@@ -208,6 +208,14 @@
             "contours_minutes": 5,
             "color": "coral"
         },
+        {
+            "name": "Jug II - Kanizliceva - Opus Arena - Vijenac Petrove Gore (Autobus 1)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
 
 
 

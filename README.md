@@ -204,7 +204,8 @@ For the sake of simplicity, very few locations from the total list of possible l
 
 - [x] Create initial functionalities
 - [x] Share analysis
-- [] Add more data 
+- [] Add more data for Osijek
+- [] Restructure coordinates in a way that each coordinate has id
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
