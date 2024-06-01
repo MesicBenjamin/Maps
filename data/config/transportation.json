@@ -23,7 +23,17 @@
             "profile": "walking",
             "contours_minutes": 5,
             "color": "coral"
+        },
+        {
+            "name": "Ulica Hrvatske Republike - Retfala (Autobus 2)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
         }  
+
+        
     ],
     "logic" : {
         "intersection" : ["transportation"],
