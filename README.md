@@ -193,7 +193,11 @@ Add new data should be done in two steps
             "intersection" : ["kindergarten", "school"],
             "union" : [],
             "difference" : ["traffic"]
-        }
+        },
+        "center" : {
+            "lat" : 45.55854878748722,
+            "lon" : 18.684848674241845
+        }   
     }
    ```
 For the sake of simplicity, very few locations from the total list of possible locations are shown. Each location must be added by the name and category that was defined in [data/database](data/database). There are multiple types of location currently supported: line (set of coordinates with distance from it), isochrone suppored by Mapbox (single coordinate with profile type: walking, cycling, driving and minutes range: 10, 20, 30, ...), circle (single coordinate with radius), and standard (set of coordinates that defines region within).
