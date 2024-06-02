@@ -224,6 +224,54 @@
             "contours_minutes": 5,
             "color": "coral"
         },
+        {
+            "name": "Cepin 3-4 - MIO - Industrijska zona Nemeting - Tenja 4-3 (Autobus 3)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Brijesce - Tenja 4-3 (Autobus 4)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Josipovac - Bijelo brdo (Autobus 5)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Ivanovac - Tvrdjavica (Autobus 6)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Drinska - Uske njive - Drinska (Autobus 7)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Jug II - Bolnica - Jug IIa (Autobus 8)",
+            "category": "transportation",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
 
 
         {
