@@ -14,6 +14,10 @@ def load_json(path: str) -> dict:
     """
 
     path_json = pathlib.Path(path)
+
+    if not path_json.exists():
+        return {}
+
     with open(path_json, 'r') as file:
         config = json.load(file)
 
@@ -125,6 +129,9 @@ class Location():
             polygon = Polygon(self.config['coordinates'])
             polygon.get_shapely_polygons_from_circle(self.config['radius'])
             self.polygons.append(polygon)
+
+        elif self.config['type'] == 'altitude':
+            print(self.config)
 
         else:
             polygon = Polygon(self.config['coordinates'])
@@ -261,10 +268,12 @@ class Map():
         ToDo
         """
 
-        path_l = pathlib.PurePath(path_database, config['category'] + '.json')
+        path_l = pathlib.PurePath(path_database, config['category'] + '.json')        
         c_json = load_json(path_l)
-        c_coordinates = c_json[config['name']]
-        config.update(c_coordinates)
+        
+        if 'name' in c_json:
+            c_coordinates = c_json[config['name']]
+            config.update(c_coordinates)
 
     def stack_locations(
             self,   

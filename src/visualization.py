@@ -77,14 +77,17 @@ def draw_map(
             figs[category] = go.Figure()
 
         # Plot each category on individual figure
-        draw_initial_coordinates(figs[category], location.config['coordinates'], location.config['color'], location_name)    
+        if 'coordinates' in location.config:
+            draw_initial_coordinates(figs[category], location.config['coordinates'], location.config['color'], location_name)    
+    
         draw_shapely_polygons(figs[category], map.locations_stacked[category]['final_shapely_polygon'], location.config['color'], category)
 
         # Plot each category on final figure but skip line coordinates
         if location.config['type'] == 'line':
             continue
 
-        draw_initial_coordinates(figs['final'], location.config['coordinates'], location.config['color'], location_name)
+        if 'coordinates' in location.config:
+            draw_initial_coordinates(figs['final'], location.config['coordinates'], location.config['color'], location_name)
 
     # Save output
     for fig_name, fig in figs.items():
