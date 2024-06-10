@@ -1,13 +1,13 @@
 import requests
 import pathlib
 
-def get_mapbox_isochrone_coordinates(
-    profile: str, 
-    lon: float,
-    lat: float,
-    contours_minutes: int,
-    path_mapbox_token: str = 'data/tokens/mapbox.txt', 
-    mapbox_link: str = 'https://api.mapbox.com/isochrone/v1/mapbox/{}/{},{}?contours_minutes={}&polygons=true&access_token={}'
+def get_isochrone_coordinates(
+        profile: str, 
+        lon: float,
+        lat: float,
+        contours_minutes: int,
+        path_mapbox_token: str = 'data/tokens/mapbox.txt', 
+        mapbox_link: str = 'https://api.mapbox.com/isochrone/v1/mapbox/{}/{},{}?contours_minutes={}&polygons=true&access_token={}'
     ) -> list:
     """
     profile: The Mapbox routing profile that the query should use. This can be walking for pedestrian and hiking travel times, cycling for travel times by bicycle, or driving for travel times by car.
@@ -23,7 +23,7 @@ def get_mapbox_isochrone_coordinates(
     mapbox_token = get_token(path_mapbox_token)
 
     assert profile in ['driving', 'walking', 'cycling']
-    assert contours_minutes in [5, 10, 20, 30, 40, 50, 60]    
+    assert contours_minutes in [5, 10, 20, 30, 40, 50, 60]
     assert isinstance(lon, float)
     assert isinstance(lat, float)
     assert isinstance(mapbox_token, str)
