@@ -1,0 +1,93 @@
+{
+    "locations": [         
+        {
+            "name": "Zeleno polje - Visnjevac (Tramvaj 1)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Bikara - Trg Ljudevita Gaja - Ulica Hrvatske Republike (Tramvaj 2)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Jug II - Kanizliceva - Opus Arena - Vijenac Petrove Gore (Autobus 1)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Ulica Hrvatske Republike - Retfala (Autobus 2)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Cepin 3-4 - MIO - Industrijska zona Nemetin - Tenja 4-3 (Autobus 3)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Brijesce - Tenja 4-3 (Autobus 4)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Josipovac - Bijelo brdo (Autobus 5)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Ivanovac - Tvrdjavica (Autobus 6)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Drinska - Uske njive - Drinska (Autobus 7)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        },
+        {
+            "name": "Jug II - Bolnica - Jug IIa (Autobus 8)",
+            "category": "transportation",
+            "type" : "isochrone",
+            "profile": "walking",
+            "contours_minutes": 5,
+            "color": "coral"
+        }        
+    ],
+    "logic" : {
+        "intersection" : ["transportation"],
+        "union" : [],
+        "difference" : []
+    },
+    "center" : {
+        "lat" : 45.55854878748722,
+        "lon" : 18.684848674241845
+    }    
+}

@@ -163,11 +163,11 @@ class Location:
             'isochrone': self._get_isochrone_polygons,
             'line': self._get_line_polygons,
             'circle': self._get_circle_polygons,
-            'altitude': self._get_altitude_polygons,
+            'elevation': self._get_elevation_polygons,
         }
 
         method = polygon_methods.get(self.config['type'], self._get_standard_polygons)
-        if self.config['type'] in ['isochrone', 'altitude']:
+        if self.config['type'] in ['isochrone', 'elevation']:
             method(path_cache)
         else:
             method()
@@ -198,13 +198,13 @@ class Location:
         polygon.get_shapely_polygons_from_circle(self.config['radius'])
         self.polygons.append(polygon)
 
-    def _get_altitude_polygons(self, path_cache: str):
-        path_altitude = '_'.join([self.name, self.config['category'] + '.pkl'])
-        path_altitude = pathlib.Path(path_cache, path_altitude)
+    def _get_elevation_polygons(self, path_cache: str):
+        path_elevation = '_'.join([self.name, self.config['category'] + '.pkl'])
+        path_elevation = pathlib.Path(path_cache, path_elevation)
 
         polygon = Polygon()
-        polygon.get_shapely_polygons_from_altitudes(
-            path_altitude,
+        polygon.get_shapely_polygons_from_elevations(
+            path_elevation,
             self.config['region']
         )
         self.polygons.append(polygon)
@@ -264,7 +264,7 @@ class Polygon():
             contours_minutes,
         )
 
-    def _get_shapely_polygons(self, convert_func, buffer_distance_or_radius):
+    def _get_shapely_polygons(self, convert_func, buffer_distance_or_radius=None):
         """
         Helper function to get shapely polygons from center coordinates.
         """
@@ -272,7 +272,10 @@ class Polygon():
             'lat' : [coord['lat'] for coord in self.center],
             'lon' : [coord['lon'] for coord in self.center],
         }
-        self.shapely_polygons = [convert_func(coords, buffer_distance_or_radius)] 
+        if buffer_distance_or_radius is None:
+            self.shapely_polygons = [convert_func(coords)]
+        else:
+            self.shapely_polygons = [convert_func(coords, buffer_distance_or_radius)] 
 
     def get_shapely_polygons_from_line(self, buffer_distance):
         """
@@ -300,21 +303,21 @@ class Polygon():
             convert_coords_to_shapely_polygon(coord) for coord in self.coords
         ]
 
-    def get_shapely_polygons_from_altitudes(self,
+    def get_shapely_polygons_from_elevations(self,
             path_a: pathlib.Path,
             config: dict
         ):
         """
-        Gets altitudes either by loading from a file or fetching from OpenTopData.
+        Gets elevations either by loading from a file or fetching from OpenTopData.
         """
         self.coords = self._load_or_fetch(
             path_a,
-            opentopdata.get_altitudes,
+            opentopdata.get_elevations,
             config,
         )
 
         df = pd.DataFrame(self.coords)
-        mask = (df['altitude'] >= config['altitude_range']['min']) & (df['altitude'] <= config['altitude_range']['max'])
+        mask = (df['elevation'] >= config['elevation_range']['min']) & (df['elevation'] <= config['elevation_range']['max'])
 
         voronoi = Voronoi(df[['lat', 'lon']].to_numpy())
         regions = voronoi.point_region[df[mask].index.values]

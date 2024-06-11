@@ -2,14 +2,14 @@ import requests
 import time
 import numpy as np
 
-def get_altitudes(
+def get_elevations(
         config: dict,
         api_batch_size : int = 100,
         api_time_sleep : int = 1,
         link_opentodata : str = "https://api.opentopodata.org/v1/aster30m?locations={}"
     ) -> dict:
     """
-    Fetches altitude data for a set of coordinates from the OpenTopoData API.
+    Fetches elevation data for a set of coordinates from the OpenTopoData API.
 
     Parameters:
     config (dict): Configuration dictionary containing the following keys:
@@ -26,7 +26,7 @@ def get_altitudes(
     dict: A dictionary containing the following keys:
         'lon' (list): The longitudes of the sampled points.
         'lat' (list): The latitudes of the sampled points.
-        'altitude' (list): The altitudes of the sampled points.
+        'elevation' (list): The elevations of the sampled points.
     """
 
     lon_linspace = np.linspace(config['top_left']['lon'], config['bottom_right']['lon'], config['n_points_lon'])
@@ -45,7 +45,7 @@ def get_altitudes(
     coords = {
         'lon' : [],
         'lat' : [],
-        'altitude' : []
+        'elevation' : []
     }
 
     for lon_batch, lat_batch in zip(lon_batches, lat_batches):
@@ -63,7 +63,7 @@ def get_altitudes(
 
             coords['lat'].append(p['location']['lat'])
             coords['lon'].append(p['location']['lng'])
-            coords['altitude'].append(p['elevation'])       
+            coords['elevation'].append(p['elevation'])       
 
         time.sleep(api_time_sleep)
 

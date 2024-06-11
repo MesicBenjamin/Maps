@@ -1,0 +1,35 @@
+{
+    "locations": [
+        {
+            "name": "Zagreb",
+            "category": "elevation",
+            "type" : "elevation",
+            "color": "brown",
+            "region": {
+                "top_left" : {
+                    "lat" : 45.907204280691666,
+                    "lon" : 15.726017847382865
+                },
+                "bottom_right" : {
+                    "lat" : 45.693645090409525,
+                    "lon" : 16.17165631747894
+                },
+                "n_points_lat" : 80,
+                "n_points_lon" : 160,
+                "elevation_range" : {
+                    "min" : 200,
+                    "max" : 1000
+                }
+            }          
+        }
+    ],
+    "logic" : {
+        "intersection" : ["elevation"],
+        "union" : [],
+        "difference" : []
+    },
+    "center" : {
+        "lat" : 45.80577947951126,
+        "lon" : 15.972303924823237
+    }
+}

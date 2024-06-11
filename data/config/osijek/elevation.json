@@ -1,0 +1,35 @@
+{
+    "locations": [
+        {
+            "name": "Osijek",
+            "category": "elevation",
+            "type" : "elevation",
+            "color": "brown",
+            "region": {
+                "top_left" : {
+                    "lat" : 45.739519253949744,
+                    "lon" : 18.386953322990376
+                },
+                "bottom_right" : {
+                    "lat" : 45.44156708331698,
+                    "lon" : 18.89521501101524
+                },
+                "n_points_lat" : 80,
+                "n_points_lon" : 160,
+                "elevation_range" : {
+                    "min" : 0,
+                    "max" : 1000
+                }
+            }          
+        }
+    ],
+    "logic" : {
+        "intersection" : ["elevation"],
+        "union" : [],
+        "difference" : []
+    },
+    "center" : {
+        "lat" : 45.55854878748722,
+        "lon" : 18.684848674241845
+    }
+}

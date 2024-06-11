@@ -1,0 +1,125 @@
+{
+    "locations": [
+        {
+            "name": "Osnovna skola Retfala",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Ivana Filipovica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Vladimira Becica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Svete Ane",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Dobrisa Cesaric",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },  
+        {
+            "name": "Osnovna skola August Senoa",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        }, 
+        {
+            "name": "Osnovna skola Antuna Mihanovica",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        }, 
+        {
+            "name": "Osnovna skola Vijenac",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },      
+        {
+            "name": "Osnovna skola Mladost",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },  
+        {
+            "name": "Osnovna skola Grigor Vitez",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },      
+        {
+            "name": "Osnovna skola Frana Krste Frankopana",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Jagode Truhelke",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Ljudevita Gaja",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        },
+        {
+            "name": "Osnovna skola Tin Ujevic",
+            "category": "school",
+            "type" : "isochrone",            
+            "profile": "walking",
+            "contours_minutes": 10,
+            "color": "red"
+        }
+    ],
+    "logic" : {
+        "intersection" : ["school"],
+        "union" : [],
+        "difference" : []
+    },
+    "center" : {
+        "lat" : 45.55854878748722,
+        "lon" : 18.684848674241845
+    }
+}

@@ -52,7 +52,7 @@ def save_figs(
         # Save the figure
         fig.write_image(path_fig, engine='kaleido', scale=2)
 
-def draw_altitude(
+def draw_elevation(
         fig: go.Figure,
         coordinates: dict,
         marker_size : int = 10
@@ -64,11 +64,11 @@ def draw_altitude(
             lon = coordinates['lon'],
             marker = {
                 'size': marker_size,
-                'color': coordinates['altitude'],
+                'color': coordinates['elevation'],
                 'showscale':True
             },
             hoverinfo= 'lat+lon+text',
-            text = [str(a) for a in coordinates['altitude']]
+            text = [str(a) for a in coordinates['elevation']]
         )
     )
 
@@ -168,23 +168,30 @@ def draw_map(
         if not location_category in figs:
             figs[location_category] = go.Figure()
 
-        draw_shapely_polygons(
-            figs[location_category],
-            map.locations_stacked[location_category]['final_shapely_polygon'],
-            location.config['color'],
-            location_category
-        )
-
-        if location_type == 'altitude':
+        if location_type == 'elevation':
             for polygon in location.polygons:
-                draw_altitude(figs[location_category], polygon.coords)
-                # draw_altitude(figs['final'], polygon.coords)
+                draw_elevation(figs[location_category], polygon.coords)
+                # draw_elevation(figs['final'], polygon.coords)
+        
         elif location_type == 'line':
-            pass
+            draw_shapely_polygons(
+                figs[location_category],
+                map.locations_stacked[location_category]['final_shapely_polygon'],
+                location.config['color'],
+                location_category
+            )
+        
         else:
+            draw_shapely_polygons(
+                figs[location_category],
+                map.locations_stacked[location_category]['final_shapely_polygon'],
+                location.config['color'],
+                location_category
+            )    
+
             draw_initial_coordinates(figs[location_category], location.config['coordinates'], location.config['color'], location_name)    
             draw_initial_coordinates(figs['final'], location.config['coordinates'], location.config['color'], location_name)
 
     save_figs(figs, map.configuration['center'])
 
-    return figs['final']
+    return figs

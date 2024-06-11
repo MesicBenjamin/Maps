@@ -29,13 +29,17 @@ def get_isochrone_coordinates(
     assert isinstance(mapbox_token, str)
     assert not mapbox_token == '<Here comes Mapbox API token>'
 
-    link = mapbox_link.format(profile, lon, lat, contours_minutes, mapbox_token)
+    link = mapbox_link.format(profile, lat, lon, contours_minutes, mapbox_token)
     link_content = requests.get(link)
     link_content_json = link_content.json()
-    polygons_coordinates = link_content_json['features'][0]['geometry']['coordinates']
-
-    polygons_coordinates = [{'lon': [pp[0] for pp in p], 'lat': [pp[1] for pp in p]}
-                     for p in polygons_coordinates]
+    
+    if 'features' in link_content_json:
+        polygons_coordinates = link_content_json['features'][0]['geometry']['coordinates']
+        polygons_coordinates = [{'lon': [pp[0] for pp in p], 'lat': [pp[1] for pp in p]}
+                        for p in polygons_coordinates]
+    else:
+        print('Missing features', link)
+        polygons_coordinates = [{'lon': [], 'lat': []}]
 
     return polygons_coordinates
 

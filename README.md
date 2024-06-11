@@ -109,7 +109,7 @@ Maps tool relies on standard python packages (plotly + Mapbox API, shapely, ...)
 Command below will generate several different categories of layers (kindergarten, schools, ...) that are defined in [data/config/all.json](data/config/all.json). 
 
    ```sh
-    python main.py -p data/config/all.json  
+    python main.py -p data/config/osijek/all.json  
    ```
 
 Kindergartens are shown as purple points on the map. Highlighted region indicates teritory that is within 20 minutes walking distance from the nearest location.
@@ -124,7 +124,7 @@ Swimming pool is shown as blue point on the map. Highlighted region indicates te
 School of applied mathematics (University of Osijek) is shown as blue point on the map. Highlighted region indicates teritory that is within 20 minutes cycling distance from the location.
 ![image description](results/university.png)
 
-(IN PROGRESS) Public transport stops (tramway and bus) are shown as orange/coral points on the map. Highlighted region indicates teritory that is within 5 minutes walking distance from the nearest station.
+Public transport stops (tramway and bus) are shown as orange/coral points on the map. Highlighted region indicates teritory that is within 5 minutes walking distance from the nearest station.
 ![image description](results/transportation.png)
 
 Roads with dense traffic and railways are shown as gray regions. 
@@ -135,6 +135,11 @@ Location of power plants are shown as gray points on the map. Region around them
 
 Intersection of all maps is highlighted green. Resulting region satisifes all constraints.
 ![image description](results/final.png)
+
+Elevation is not that interesting for Osijek since it is mostly flat. Therefore, it is shown below for Zagreb. Yellow indicates higher elevation. Colorbar units are meters.
+![image description](results/zagreb_elevation.png)
+Region with elevation between prefered values (e.g., 200m-1000m) is highlighted green.
+![image description](results/zagreb_elevation_final.png)
 
 Interactive mode  
 If one wants to study resulting map into greater detail, it is recommended to open [interactive.ipynb](interactive.ipynb) with jupyter notebook
@@ -187,10 +192,33 @@ Add new data should be done in two steps
                 "profile": "walking",
                 "contours_minutes": 20,
                 "color": "purple"
-            }
+            },
+
+            {
+                "name": "Osijek",
+                "category": "elevation",
+                "type" : "elevation",
+                "color": "brown",
+                "region": {
+                    "top_left" : {
+                        "lat" : 45.739519253949744,
+                        "lon" : 18.386953322990376
+                    },
+                    "bottom_right" : {
+                        "lat" : 45.44156708331698,
+                        "lon" : 18.89521501101524
+                    },
+                    "n_points_lat" : 80,
+                    "n_points_lon" : 160,
+                    "elevation_range" : {
+                        "min" : 0,
+                        "max" : 1000
+                    }
+                }          
+            }            
         ],
         "logic" : {
-            "intersection" : ["kindergarten", "school"],
+            "intersection" : ["kindergarten", "school", "elevation"],
             "union" : [],
             "difference" : ["traffic"]
         },
@@ -200,16 +228,17 @@ Add new data should be done in two steps
         }   
     }
    ```
-For the sake of simplicity, very few locations from the total list of possible locations are shown. Each location must be added by the name and category that was defined in [data/database](data/database). There are multiple types of location currently supported: line (set of coordinates with distance from it), isochrone suppored by Mapbox (single coordinate with profile type: walking, cycling, driving and minutes range: 10, 20, 30, ...), circle (single coordinate with radius), and standard (set of coordinates that defines region within).
+For the sake of simplicity, very few locations from the total list of possible locations are shown. Each location must be added by the name and category that was defined in [data/database](data/database). There are multiple types of location currently supported: line (set of coordinates with distance from it), isochrone suppored by Mapbox (single coordinate with profile type: walking, cycling, driving and minutes range: 10, 20, 30, ...), circle (single coordinate with radius), elevation, and standard (set of coordinates that defines region within).
 
+Elevation is an exception in the way that it only needs config shown in the example below. Region for which elevation is exported is fetched within teritory defined with top_left and bottom_right coordinates. Granularity of points can be changed in both lat and lon direction. Region with elevation of interest is defined through elevation_range. Some rough estimate on elevation error rate is 30 meters.
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Create initial functionalities
 - [x] Share analysis
-- [] Add more data for Osijek
-- [] Restructure coordinates in a way that each coordinate has id
+- [x] Add more data for Osijek
+- [x] Elevation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,6 +287,7 @@ Project Link: [https://github.com/MesicBenjamin/Maps](https://github.com/MesicBe
 
 * Readme template: [https://github.com/othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 * Map functionalities: [Mapbox](https://www.mapbox.com)
+* Elevation: [Open Topo Data](https://www.opentopodata.org)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
